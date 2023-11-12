@@ -2,10 +2,16 @@ import time
 
 all_dot = "./src/visg/static/data/interactions_full_run_static.dot"
 master_file = "./src/visg/static/data/interactions_full_run.dot"
+seed_file = "./src/visg/static/data/seed_interactions_full_run.dot"
 
-with open(master_file, 'w') as f:
-    f.write("digraph G {\n")
-    f.write("}")
+
+with open(seed_file, 'r') as fr:
+    lines = fr.readlines()
+    with open(master_file, 'w') as f:
+        for line in lines:
+            f.write(line)
+#         f.write("digraph G {\n")
+#         f.write("}")
 
 time.sleep(10)
 
